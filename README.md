@@ -1,7 +1,6 @@
 # Blub
-Blub is a Chromium based web browser made using Electron JS. 
+Blub is a feature rich Chromium based web browser made using Electron JS. 
 
-Some parts of the source code in this project come from min (https://github.com/minbrowser/min), though we are actively making changes and editing all source code. 
 
 # Repository Information 
 "Nightly" is the main branch of this repository. All active development happens in Nightly, and new beta releases happen often. 
@@ -10,6 +9,15 @@ Because of this, nightly builds will be incomplete and have bugs.
 Please make sure all contributions are somewhat "working" when you create a pull request, and will not break other parts of the code when merged. 
 
 As development continues, changes are pushed into beta and release branches. If a bug is found after release (in the release branch), bug fix changes will be made directly there. 
+
+
+# Credits
+Some parts of the source code in this project come from min (https://github.com/minbrowser/min), and credit goes to its developers and contributers.
+This project uses Electron JS as a framework, which uses Chromium as a base. 
+Changes are made to this project by contributers and developers.
+
+Thanks to everyone who helps make this project!
+
 
 # License [MIT]
 Copyright (c) 2021 Blub Browser
