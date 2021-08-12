@@ -19,12 +19,12 @@ require('./createPackage.js')(toTarget(platform)).then(function (appPaths) {
   appPaths.forEach(function (packagePath) {
     /* create zip file */
 
-    var output = fs.createWriteStream(packagePath.replace('Min-', 'Min-v' + version + '-') + '.zip')
+    var output = fs.createWriteStream(packagePath.replace('Blub-', 'Blub-v' + version + '-') + '.zip')
     var archive = archiver('zip', {
       zlib: { level: 9 }
     })
 
-    archive.directory(path.resolve(packagePath, 'Min.app'), 'Min.app')
+    archive.directory(path.resolve(packagePath, 'Blub.app'), 'Blub.app')
 
     archive.pipe(output)
     archive.finalize()

@@ -30,7 +30,7 @@ const ignoredDirs = [
 ]
 
 var baseOptions = {
-  name: 'Min',
+  name: 'Blub',
   dir: basedir,
   out: 'dist/app',
   electronVersion: electronVersion,
