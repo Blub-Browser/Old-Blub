@@ -1,5 +1,5 @@
 # Blub
-Blub is a feature rich Chromium based web browser made using Electron JS. 
+Blub is a feature rich Chromium based web browser made using Electron JS and based on min.
 
 
 # Repository Information 
