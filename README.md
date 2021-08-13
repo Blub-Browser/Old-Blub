@@ -10,6 +10,18 @@ Please make sure all contributions are somewhat "working" when you create a pull
 
 As development continues, changes are pushed into beta and release branches. If a bug is found after release (in the release branch), bug fix changes will be made directly there. 
 
+# Building
+To build Blub from source code, run `npm install` and then run one of the following commands.
+
+- `npm run buildWindows`
+- `npm run buildMacIntel`
+- `npm run buildMacArm`
+- `npm run buildDebian`
+- `npm run buildRaspi` (for Raspberry Pi, Raspberry Pi OS)
+- `npm run buildLinuxArm64`
+- `npm run buildRedhat`
+
+Run `npm install` and `npm start` to test without building.
 
 # Credits
 Some parts of the source code in this project come from min (https://github.com/minbrowser/min), and credit goes to its developers and contributers.
