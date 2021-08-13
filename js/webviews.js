@@ -9,6 +9,7 @@ var hasSeparateTitlebar = settings.get('useSeparateTitlebar')
 var windowIsMaximized = false // affects navbar height on Windows
 var windowIsFullscreen = false
 
+
 function captureCurrentTab (options) {
   if (tabs.get(tabs.getSelected()).private) {
     // don't capture placeholders for private tabs
@@ -25,7 +26,7 @@ function captureCurrentTab (options) {
     width: Math.round(window.innerWidth / 10),
     height: Math.round(window.innerHeight / 10)
   })
-}
+} 
 
 // called whenever a new page starts loading, or an in-page navigation occurs
 function onPageURLChange (tab, url) {
@@ -263,7 +264,7 @@ const webviews = {
       } else {
         placeholderImg.hidden = true
       }
-    }
+    } 
     setTimeout(function () {
       // wait to make sure the image is visible before the view is hidden
       // make sure the placeholder was not removed between when the timeout was created and when it occurs
@@ -274,6 +275,7 @@ const webviews = {
     }, 0)
   },
   hidePlaceholder: function (reason) {
+    
     if (webviews.placeholderRequests.includes(reason)) {
       webviews.placeholderRequests.splice(webviews.placeholderRequests.indexOf(reason), 1)
     }
@@ -308,9 +310,7 @@ const webviews = {
     ipc.send('setBounds', { id: webviews.selectedId, bounds: webviews.getViewBounds() })
   },
   goBackIgnoringRedirects: function (id) {
-    /* If the current page is an error page, we actually want to go back 2 pages, since the last page would otherwise send us back to the error page
-    TODO we want to do the same thing for reader mode as well, but only if the last page was redirected to reader mode (since it could also be an unrelated page)
-    */
+
 
     var url = tabs.get(id).url
 
@@ -493,18 +493,19 @@ setInterval(function () {
   captureCurrentTab()
 }, 15000)
 
+
 ipc.on('captureData', function (e, data) {
   tabs.update(data.id, { previewImage: data.url })
   if (data.id === webviews.selectedId && webviews.placeholderRequests.length > 0) {
     placeholderImg.src = data.url
-    placeholderImg.hidden = false
+    placeholderImg.hidden = true
   }
 })
 
 /* focus the view when the window is focused */
 
 ipc.on('windowFocus', function () {
-  if (webviews.placeholderRequests.length === 0 && document.activeElement.tagName !== 'INPUT') {
+  if (document.activeElement.tagName !== 'INPUT') {
     webviews.focus()
   }
 })
